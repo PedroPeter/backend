@@ -112,4 +112,9 @@ return [
 
     'sendmail' => '/usr/sbin/sendmail -bs',
 
+    'mailgun' => [
+        'domain' => 'meu@email.com',
+        'secret' => 'meupassword',
+    ],
+
 ];
