@@ -22,7 +22,7 @@ class EventoController extends Controller
      */
     public function index()
     {
-        $eventos = \App\Evento;
+        $eventos = new \App\Evento();
         if (count($eventos) > 0) {
             $eventos_obj = [
                 'eventos' => $eventos

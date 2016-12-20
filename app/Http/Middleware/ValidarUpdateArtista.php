@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class ValidarUpdateAdmin
+class ValidarUpdateArtista
 {
     /**
      * Handle an incoming request.

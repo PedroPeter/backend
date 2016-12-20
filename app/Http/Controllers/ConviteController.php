@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Mail;
 class ConviteController extends Controller
 {
     public function __construct(){
-        $this->middleware('validar_convite', ['only'=>['store']]);
-        $this->middleware('validar_edicao_convite', ['only' => ['update']]);
-        $this->middleware('verificar_existencia_convite', ['only' => ['destroy', 'show']]);
+        //$this->middleware('validar_convite', ['only'=>['store']]);
+        //$this->middleware('validar_edicao_convite', ['only' => ['update']]);
+        //$this->middleware('verificar_existencia_convite', ['only' => ['destroy', 'show']]);
         $this->middleware('verificar_existencia_usuario', ['only' => ['sendConvite']]);
         $this->middleware('validar_envio_convite',['only'=>'sendConvite']);
     }
@@ -76,8 +76,7 @@ class ConviteController extends Controller
     {
         $data = $request->convite_data;
         $convite=\App\Convite::find($id);
-        $convite->fill($data);
-        $convite->save();
+        $convite->save($data);
         return $data;
     }
 

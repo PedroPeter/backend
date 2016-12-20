@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class ValidarEventoFavorito
+class ValidarEnvioFavorito
 {
     /**
      * Handle an incoming request.

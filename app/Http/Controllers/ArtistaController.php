@@ -75,10 +75,9 @@ class ArtistaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $artista=\App\Artista::find($id);
         $data = $request->artista_data;
-        $artista->fill($data);
-        $artista->save();
+        $artista=$request->artista;
+        $artista->save($data);
         return $artista;
     }
 

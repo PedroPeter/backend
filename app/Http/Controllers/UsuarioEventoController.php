@@ -39,7 +39,7 @@ class UsuarioEventoController extends Controller
      * @return \Illuminate\Http\Response
      * @return \Illuminate\Http\Response
      */
-    public function comemt(Request  $request)
+    public function coment(Request  $request)
     {
         $evento=$request->evento;
         $usuario=$request->usuario;

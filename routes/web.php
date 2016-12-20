@@ -61,20 +61,27 @@ Route::group(['prefix' => 'eventos'], function () {
 //Routas para  evento
     Route::resource('eventos','EventoController',$read_write);
 
-//Routas para  usuario + evento
-    Route::resource('usuario/eventos','UsuarioEventoController',$read_write);
 
 
 
 });
 
+//Routas para  usuario + evento
+Route::post('eventos/usuario/like','UsuarioEventoController@like');
+Route::get('eventos/usuario/coment','UsuarioEventoController@coment');
+
+
 //Routas para  feedback
-Route::resource('feedbacks','FeedbackController',$read_write);
-Route::post('darFeedback/feedback', 'PromotorController@sendConvite');
+Route::resource('feedbacks','FeedbackController@index');
+Route::resource('feedbacks','FeedbackController@store');
+Route::resource('feedbacks','FeedbackController@show');
+Route::post('feedbacks','FeedbackController@send');
+Route::post('feedbacks/enviarConvite', 'PromotorEventoController@enviarConvites');
 
 
 //Routas para  Notificacao
 Route::resource('notificacoes','NotificacaoController',$read_write);
+Route::post('notificacoes','NotificacaoController@notificar');
 
 
 /*//Routas para  guest
