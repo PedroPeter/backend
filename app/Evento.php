@@ -7,26 +7,43 @@ use Illuminate\Database\Eloquent\Model;
 class Evento extends Model
 {
     protected $fillable = [
-        'title', 'location','begin','end','image','descripion','type','category','convidado','partilhado','eventPhoto','likes','coments'
+        'title', 'location','begin','end','image','descripion','type','category','artista_id'
     ];
 
-    public function promotores()
-    {
-
-        return $this->belongsToMany('\App\Promotor');
-
+    public function artista(){
+        return $this->hasMany('\App\Artista');
     }
 
 
     public function usuarios()
     {
+        return $this->belongsToMany('\App\Usuario')->withPivot('likes','partilhado','favorito');
+    }
 
-        return $this->belongsToMany('\App\Usuario');
+    public function postar()
+    {
+        return $this->belongsTo('\App\Post');
+    }
+
+    public function promotores()
+    {
+
+        return $this->hasMany('\App\Promotor');
 
     }
+
+
+    public function comentarios()
+    {
+        return $this->belongsTo('\App\Comentario');
+    }
+
+
 
     public function convite()
     {
         return $this->hasone('\App\Convite');
     }
+
+
 }

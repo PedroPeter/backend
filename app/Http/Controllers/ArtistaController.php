@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Evento;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,7 +13,8 @@ class ArtistaController extends Controller
     public function __construct(){
         $this->middleware('validar_artista', ['only'=>['store']]);
         $this->middleware('validar_edicao_artista', ['only' => ['update']]);
-        $this->middleware('verificar_existencia_artista', ['only' => ['destroy', 'show']]);
+        $this->middleware('verificar_existencia_artista', ['only' => ['destroy', 'show','addEvento']]);
+        $this->middleware('verificar_existencia_evento', ['only' => ['addEvento']]);
     }
 
     /**
@@ -22,14 +24,14 @@ class ArtistaController extends Controller
      */
     public function index()
     {
-        $artista = \App\Usuario::where('enable',true);
+        $artista = \App\Artista::all();
         if (count($artista) > 0) {
             $artista_obj = [
                 'artista' => $artista
             ];
             return $artista_obj;
         } else {
-            abort(404);
+            return $this->response()-json(['Users'=>'Nenhurm usuario persistido'],404);
         }
     }
 
@@ -44,7 +46,10 @@ class ArtistaController extends Controller
     public function store(Request $request)
     {
         $artista_data = $request->artista_data;
-        $artista =\App\Usuario::create($artista_data);
+        $artista =\App\Artista::create($artista_data);
+        $evento=$request->evento;
+        $artista->evento()->create($evento);
+        $artista->save();
         return $artista;
     }
 
@@ -56,7 +61,7 @@ class ArtistaController extends Controller
      */
     public function show($id)
     {
-        return \App\Artista::findOrFail($id);
+        return \App\Artista::find($id);
     }
 
 
@@ -86,5 +91,19 @@ class ArtistaController extends Controller
     public function destroy($id)
     {
         return \App\Artista::destroy($id);
+    }
+
+    /**
+     * Relate Artista and Evento.
+     *
+     * @params  int  $id1,$id2
+     * @return \Illuminate\Http\Response
+     */
+    public function addEvento($id1,$id2)
+    {
+        $artista= \App\Artista::findOrFail($id1);
+        $evento= \App\Evento::findOrFail($id2);
+        $artista->evento()->create($evento);
+        return $artista->save();
     }
 }

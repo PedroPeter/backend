@@ -10,6 +10,6 @@ class Admin extends Model
 
     public function usuario()
     {
-        return $this->belongsTo('App\Usuario');
+        return $this->hasOne('App\Usuario');
     }
 }

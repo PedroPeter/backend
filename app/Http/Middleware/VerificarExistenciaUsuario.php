@@ -15,9 +15,8 @@ class VerificarExistenciaUsuario
      */
     public function handle($request, Closure $next)
     {
-        $usuario_id = $request->route()->parameter('usuarios');
+        $usuario_id = $request->route()->parameter('administradors');
         $usuario = \App\Usuario::find($usuario_id);
-
         if (isset($usuario)) {
             $request->{'usuario'} = $usuario;
             return $next($request);
@@ -28,7 +27,7 @@ class VerificarExistenciaUsuario
                 ]
             ];
 
-            return response($erros, 404);
+            return response()->json(['Usuario nao encontrado'],404);
         }
 
     }

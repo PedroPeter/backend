@@ -15,8 +15,8 @@ class VerificarExistenciaEvento
      */
     public function handle($request, Closure $next)
     {
-        $evento_id = $request->route()->parameter('eventos');
-        $evento = \App\Evento::find($evento_id);
+        $evento_id = $request->route()->parameter('evento');
+        $evento = \App\Evento::findOrFail($evento_id);
 
         if (isset($evento)) {
             $request->{'evento'} = $evento;

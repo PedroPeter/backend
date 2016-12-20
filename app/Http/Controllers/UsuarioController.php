@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Usuario;
+use Symfony\Component\HttpFoundation\Response;
 
 class UsuarioController extends Controller
 {
@@ -11,11 +13,11 @@ class UsuarioController extends Controller
         $this->middleware('validar_usuario', ['only'=>['store']]);
         $this->middleware('validar_edicao_usuario', ['only' => ['update']]);
         $this->middleware('verificar_existencia_usuario', ['only' => ['destroy', 'show','isblocked']]);
+        $this->middleware('validar_evento_favorito', ['only' => ['favoriteEvent']]);
+
     }
 
-    private $falhou=(
-        ['failed'=>'A operacao falhou']
-        );
+
     /**
      * Display a listing of the resource.
      *
@@ -23,14 +25,14 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuario = \App\Usuario::where('enable',true);
+        $usuario = \App\Usuario::all();
         if (count($usuario) > 0) {
             $usuario_obj = [
                 'usuario' => $usuario
             ];
-            return $usuario_obj;
+            return response()->json(['data' => $usuario_obj], 200);
         } else {
-            abort(404);
+            return response('Data not found',404);
         }
     }
 
@@ -45,6 +47,7 @@ class UsuarioController extends Controller
     {
         $usuario_data = $request->usuario_data;
         $usuario =\App\Usuario::create($usuario_data);
+        $usuario->save();
         return $usuario;
     }
 
@@ -60,16 +63,6 @@ class UsuarioController extends Controller
         return $usario;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -111,7 +104,21 @@ class UsuarioController extends Controller
 
     public function isblocked($id){
         $usario= \App\Usuario::findOrFail($id);
-
         return $usario->blocked;
+    }
+
+    /**
+     * Add a evento to the user Resource.
+     *
+     * @param  Request $request
+     * @return \Illuminate\Http\Response
+     */
+
+    public function favoriteEvent(Request $request)
+    {
+        $evento= $request->evento;
+        $usuario= $request->usuario;
+        $usuario->eventos()->save($evento);
+        return $usuario->eventos()->get();
     }
 }

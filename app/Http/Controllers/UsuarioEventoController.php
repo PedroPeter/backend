@@ -7,79 +7,74 @@ use App\Http\Controllers\Controller;
 
 class UsuarioEventoController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('verificar_existencia_evento', ['only' => ['like'],['comemt'],['post']]);
+        $this->middleware('verificar_existencia_usuario', ['only' => ['comemt']]);
+
+    }
+
+
     /**
-     * Display a listing of the resource.
-     *
+     * Incremets likes of the resource.
+     *    @param  Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+
+    public function like(Request  $request)
     {
-        //
+        $evento=$request->evento;
+        $likes=$evento->like +1;
+        $evento->likes=$likes;
+        $evento->save();
+        return $evento->likes;
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Comments a Event.
      *
+     *  @param  Request  $request
+     * @return \Illuminate\Http\Response
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function comemt(Request  $request)
     {
-        //
-    }
+        $evento=$request->evento;
+        $usuario=$request->usuario;
+        $coment=$request->coment;
+        if(isset($coment)){
+            $evento->comentarios()->create($coment);
+            $evento->save();
+            return $coment;
+        }else{
+            return $this->response()->json(['coment_not_found'],404);
+        }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     *  @param  Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function post(Request  $request)
     {
-        //
+        $evento=$request->evento;
+        $path=$request->path;
+        if(!isset($path)){
+            $evento->postar()->create($path);
+            $evento->save();
+
+        }else{
+            return response()->json(['path_not_found'], 404);
+        }
+
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

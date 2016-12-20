@@ -7,6 +7,11 @@ use App\Http\Controllers\Controller;
 
 class FeedbackController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('validar_feedback', ['only'=>['send','store']]);
+        }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,18 +19,17 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        //
+        $feedback = \App\Feedback::all();
+        if (count($feedback) > 0) {
+            $feedback_obj = [
+                'feedback' => $feedback
+            ];
+            return $feedback_obj;
+        } else {
+            abort(404);
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +39,13 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $feedback = $request->feedback;
+        $feedback_data = $request->feedback_data;
+        $feedback=\App\Feedback::create($feedback_data);
+        $usuario=$request->usuario;
+        $feedback->usuario_feedback()->create($usuario);
+        $feedback->save();
+        return $feedback;
     }
 
     /**
@@ -46,40 +56,25 @@ class FeedbackController extends Controller
      */
     public function show($id)
     {
-        //
+        $feedback= \App\Feedback::findOrFail($id);
+        return $feedback;
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
+     * Send a newly created resource in storage to admin.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+
+    public function send(Request $request)
     {
-        //
+        $admin=\App\Admin::get()->first();
+        $to=$admin->email;
+        $feedback= $request->feedback_data;
+        $feedback= \App\Feedback::save($feedback);
+        Mail::to($to)->send(new Mail($feedback));
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

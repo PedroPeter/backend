@@ -10,7 +10,7 @@ class Convite extends Model
         'title','description','sender'];
 
 
-    public function ususario()
+    public function usuario()
     {
         return $this->belongsTo('App\Usuario');
     }

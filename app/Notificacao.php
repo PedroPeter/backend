@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Notificacao extends Model
 {
     protected $fillable = [
-        'title', 'message','vista'
+        'title', 'message','vista','sender'
     ];
 
-    public function ususario()
+    public function usuario()
     {
-        return $this->belongsTo('App\Usuario');
+        return $this->belongsToMany('App\Usuario')->withPivot('notificacao');
     }
 }

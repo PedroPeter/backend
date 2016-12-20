@@ -1,0 +1,653 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>general</h1>
+<!-- START_26a8ade898ac2633b8662c5e7dcab934 -->
+<h2>Display a listing of the resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/administradors" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/administradors",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET dashboard/administradors</code></p>
+<p><code>HEAD dashboard/administradors</code></p>
+<!-- END_26a8ade898ac2633b8662c5e7dcab934 -->
+<!-- START_d263adddb21b217ec6c6b35088e69647 -->
+<h2>Store a newly created resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/administradors" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/administradors",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST dashboard/administradors</code></p>
+<!-- END_d263adddb21b217ec6c6b35088e69647 -->
+<!-- START_0fb4e66ab5255eceb0513e2959eda8ae -->
+<h2>Display the specified resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/administradors/{administrador}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/administradors/{administrador}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET dashboard/administradors/{administrador}</code></p>
+<p><code>HEAD dashboard/administradors/{administrador}</code></p>
+<!-- END_0fb4e66ab5255eceb0513e2959eda8ae -->
+<!-- START_04b7cfde5830546fb58659789426542a -->
+<h2>Update the specified resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/administradors/{administrador}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/administradors/{administrador}",
+    "method": "PUT",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT dashboard/administradors/{administrador}</code></p>
+<p><code>PATCH dashboard/administradors/{administrador}</code></p>
+<!-- END_04b7cfde5830546fb58659789426542a -->
+<!-- START_c861d3f5ae4dd67ccc74a9e19d4dbbdc -->
+<h2>Remove the specified resource from storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/administradors/{administrador}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/administradors/{administrador}",
+    "method": "DELETE",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE dashboard/administradors/{administrador}</code></p>
+<!-- END_c861d3f5ae4dd67ccc74a9e19d4dbbdc -->
+<!-- START_3df59d7f9e6de4a1ebe0210bc87d419e -->
+<h2>Enable a specified Promotor resource to act.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/adicionarPromotor/{promotor}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/adicionarPromotor/{promotor}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET dashboard/adicionarPromotor/{promotor}</code></p>
+<p><code>HEAD dashboard/adicionarPromotor/{promotor}</code></p>
+<!-- END_3df59d7f9e6de4a1ebe0210bc87d419e -->
+<!-- START_a95cc89f3353e30edd98d2b7cda5345c -->
+<h2>Removes a specified Promotor.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/removerPromotor/{promotor}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/removerPromotor/{promotor}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET dashboard/removerPromotor/{promotor}</code></p>
+<p><code>HEAD dashboard/removerPromotor/{promotor}</code></p>
+<!-- END_a95cc89f3353e30edd98d2b7cda5345c -->
+<!-- START_2a8dba0fbf723cdfaa2e0b8f84d0fbab -->
+<h2>Blocks a specified Usuario resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/bloquearUsuario/{usuario}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/bloquearUsuario/{usuario}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET dashboard/bloquearUsuario/{usuario}</code></p>
+<p><code>HEAD dashboard/bloquearUsuario/{usuario}</code></p>
+<!-- END_2a8dba0fbf723cdfaa2e0b8f84d0fbab -->
+<!-- START_65c4f448e08986e75a282eaeac3aacd5 -->
+<h2>Verify the user acess.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/isUsuarioBlocked/{usuario}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/isUsuarioBlocked/{usuario}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET dashboard/isUsuarioBlocked/{usuario}</code></p>
+<p><code>HEAD dashboard/isUsuarioBlocked/{usuario}</code></p>
+<!-- END_65c4f448e08986e75a282eaeac3aacd5 -->
+<!-- START_835185344d845dba6975e159141b4318 -->
+<h2>Display a listing of the resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/promotores" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/promotores",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET dashboard/promotores</code></p>
+<p><code>HEAD dashboard/promotores</code></p>
+<!-- END_835185344d845dba6975e159141b4318 -->
+<!-- START_d7803aa1a74f29fc6a2659f51c42bcf5 -->
+<h2>Store a newly created resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/promotores" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/promotores",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST dashboard/promotores</code></p>
+<!-- END_d7803aa1a74f29fc6a2659f51c42bcf5 -->
+<!-- START_b3a200d66aeb5e4fcda78dedd8a54a81 -->
+<h2>Display the specified resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/promotores/{promotore}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/promotores/{promotore}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET dashboard/promotores/{promotore}</code></p>
+<p><code>HEAD dashboard/promotores/{promotore}</code></p>
+<!-- END_b3a200d66aeb5e4fcda78dedd8a54a81 -->
+<!-- START_d434f54bc400011d7baa47144431d249 -->
+<h2>Update the specified resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/promotores/{promotore}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/promotores/{promotore}",
+    "method": "PUT",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT dashboard/promotores/{promotore}</code></p>
+<p><code>PATCH dashboard/promotores/{promotore}</code></p>
+<!-- END_d434f54bc400011d7baa47144431d249 -->
+<!-- START_68b9d6ce3917d6d406a9614957a47ff0 -->
+<h2>Remove the specified resource from storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/promotores/{promotore}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/promotores/{promotore}",
+    "method": "DELETE",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE dashboard/promotores/{promotore}</code></p>
+<!-- END_68b9d6ce3917d6d406a9614957a47ff0 -->
+<!-- START_41b326974de59e2ae2b8052a2a2e1204 -->
+<h2>Relate Artista and Evento.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/adicionarArtistaAoEvento/{artista}/{evento}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/adicionarArtistaAoEvento/{artista}/{evento}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET dashboard/adicionarArtistaAoEvento/{artista}/{evento}</code></p>
+<p><code>HEAD dashboard/adicionarArtistaAoEvento/{artista}/{evento}</code></p>
+<!-- END_41b326974de59e2ae2b8052a2a2e1204 -->
+<!-- START_2b763bf0f3c51ef6057ea5aedea2ab1c -->
+<h2>Send invites do user prefered promotor event&#039;s.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/enviarConvites/{viewName}/{promotor}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/enviarConvites/{viewName}/{promotor}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET dashboard/enviarConvites/{viewName}/{promotor}</code></p>
+<p><code>HEAD dashboard/enviarConvites/{viewName}/{promotor}</code></p>
+<!-- END_2b763bf0f3c51ef6057ea5aedea2ab1c -->
+<!-- START_8fa7d6ef88cf13bd5c50505357fcc574 -->
+<h2>Display a listing of the resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/usuarios" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/usuarios",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET dashboard/usuarios</code></p>
+<p><code>HEAD dashboard/usuarios</code></p>
+<!-- END_8fa7d6ef88cf13bd5c50505357fcc574 -->
+<!-- START_c065dbdfc1eb2c02e048e580dcc5012a -->
+<h2>Store a newly created resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/usuarios" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/usuarios",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST dashboard/usuarios</code></p>
+<!-- END_c065dbdfc1eb2c02e048e580dcc5012a -->
+<!-- START_1539c73b8c498fc75fba53c43cf21428 -->
+<h2>Display the specified resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/usuarios/{usuario}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/usuarios/{usuario}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET dashboard/usuarios/{usuario}</code></p>
+<p><code>HEAD dashboard/usuarios/{usuario}</code></p>
+<!-- END_1539c73b8c498fc75fba53c43cf21428 -->
+<!-- START_f45cd93312e969bb08c24ad75fdb5ee5 -->
+<h2>Update the specified resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/usuarios/{usuario}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/usuarios/{usuario}",
+    "method": "PUT",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT dashboard/usuarios/{usuario}</code></p>
+<p><code>PATCH dashboard/usuarios/{usuario}</code></p>
+<!-- END_f45cd93312e969bb08c24ad75fdb5ee5 -->
+<!-- START_f6b0ace7e6102d5d452c629fe8782ebd -->
+<h2>Remove the specified resource from storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/usuarios/{usuario}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/usuarios/{usuario}",
+    "method": "DELETE",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE dashboard/usuarios/{usuario}</code></p>
+<!-- END_f6b0ace7e6102d5d452c629fe8782ebd -->
+<!-- START_cf0d89e658a89ca4a8f0840020aacd02 -->
+<h2>Send invites do user prefered promotor event&#039;s.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/usuario/eventoFavorito/eventos" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/usuario/eventoFavorito/eventos",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST dashboard/usuario/eventoFavorito/eventos</code></p>
+<!-- END_cf0d89e658a89ca4a8f0840020aacd02 -->
+<!-- START_6dccaab01e57044a431f6a0dff77b52d -->
+<h2>Notif users of the system.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl "http://localhost/dashboard/notificar/{notificacao}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/dashboard/notificar/{notificacao}",
+    "method": "PUT",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT dashboard/notificar/{notificacao}</code></p>
+<!-- END_6dccaab01e57044a431f6a0dff77b52d -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>

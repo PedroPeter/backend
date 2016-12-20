@@ -10,12 +10,8 @@ class Feedback extends Model
         'mensage', 'type'
     ];
 
-    public function guests_feedback()
+    public function usuario_feedback()
     {
-        return $this->belongsTo('App\Guest');
-    }
-    public function usuarios_feedback()
-    {
-        return $this->belongsTo('App\Usuario');
+        return $this->hasOne('App\Usuario');
     }
 }

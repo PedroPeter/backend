@@ -61,8 +61,8 @@ class PromotorController extends Controller
      */
     public function show($id)
     {
-        $admin= \App\Admin::findOrFail($id);
-        return $admin;
+        $promotor= \App\Promotor::findOrFail($id);
+        return $promotor;
     }
 
 
@@ -100,26 +100,6 @@ class PromotorController extends Controller
         }
     }
 
-    /**
-     * Add a specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function addEvento(Request $request)
-    {
-        return EventoController()->store($request);
-    }
-
-    /**
-     * Add a specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $id
-     */
-    public function removeEvento($id)
-    {
-        return EventoController()->destroy($id);
-    }
 
 
 }

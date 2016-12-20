@@ -16,15 +16,7 @@ class ValidarCadastroAdmin
     public function handle($request, Closure $next)
     {
         return app(\App\Http\Middleware\VerificarExistenciaUsuario::class)->handle($request, function($request) use ($next) {
-            $data = $request->json()->all();
-            $erro=['error'=>'A Opetacao falhou!'];
-            if(isset($data)){
-                $request->{'admin_data'} = $data;
                 return $next($request);
-            }else{
-                return response()->json($erro, 400);
-            }
-
     });
     }
 }

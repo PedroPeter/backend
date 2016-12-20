@@ -16,7 +16,7 @@ class VerificarExistenciaPromotor
     public function handle($request, Closure $next)
     {
         return app(\App\Http\Middleware\VerificarExistenciaUsuario::class)->handle($request, function($request) use ($next) {
-            $promotor_id = $request->route()->parameter('promotores');
+            $promotor_id = $request->route()->parameter('promotore');
             $promotor = \App\Promotor::where('id', $promotor_id);
             if (isset($promotor)) {
                 $request->{'promotor'} = $promotor;

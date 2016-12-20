@@ -51,9 +51,8 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $usuario = $request->usuario;
-        $admin_data = $request->admin_data;
-        $admin = $usuario->admin()->create($admin_data);
-        return $admin;
+        $usuario->admin()->save();
+        return $usuario;
 
     }
 
@@ -81,9 +80,7 @@ class AdminController extends Controller
     {
         $data = $request->admin_data;
         $admin = $request->admin;
-        $admin->fill($data);
-        $admin->save();
-
+        $admin->usuario()->save($data);
         return $admin;
     }
 
@@ -113,6 +110,7 @@ class AdminController extends Controller
     {
         $promotor=\App\Promotor::find($id);
         $promotor->usuario->enable=true;
+        return true;
     }
 
     /**
@@ -125,7 +123,7 @@ class AdminController extends Controller
     public function blockUsuario($id)
     {
         $usuario=\App\Usuario::find($id);
-        $usuario->enable=true;
+        $usuario->enable=false;
     }
 
 

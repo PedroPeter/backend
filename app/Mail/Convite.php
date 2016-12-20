@@ -11,14 +11,19 @@ class Convite extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $view;
+    public $viewData;
+
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($view, $viewData)
     {
-        //
+       $this->view=$view;
+       $this->viewDta=$viewData;
     }
 
     /**
@@ -28,6 +33,7 @@ class Convite extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->from('pedroxpeter96@gmail.com')->
+        view($this->view);
     }
 }

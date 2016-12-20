@@ -21,9 +21,7 @@ class ValidarCadastroEvento
 
             isset($data['image'])&&isset($data['descripion'])&&isset($data['type'])&&isset($data['promotor']) &&
 
-            isset($data['category']) && isset($data['convidado']) && isset($data['partilhado'])&& isset($data['eventPhoto']) &&
-
-            isset($data['likes']) && isset($data['coments'])) {
+            isset($data['category']) && isset($data['convidado']) && isset($data['artista_id'])) {
 
                 $request->{'evento_data'} = $data;
                 return $next($request);
